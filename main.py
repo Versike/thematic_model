@@ -4,7 +4,7 @@ from features import *
 import os.path
 from collections import Counter
 
-# class bebrochka:models.ldamodel.LdaModel(corpus=None, num_topics=100, 
+# models.ldamodel.LdaModel(corpus=None, num_topics=200, 
 #                                 id2word=None, distributed=False, 
 #                                 chunksize=2000, passes=1, update_every=1, 
 #                                 alpha='symmetric', eta=None, decay=0.5, 
@@ -17,7 +17,7 @@ from collections import Counter
 # first part of lab 7
 corpus = corpora.BleiCorpus('ap/ap.dat', 'ap/vocab.txt')
 # print(corpus)
-model = models.ldamodel.LdaModel(corpus, id2word = corpus.id2word)
+model = models.ldamodel.LdaModel(corpus, id2word = corpus.id2word, num_topics=200)
 # print(model)
 doc = corpus.docbyoffset(0) # первый документ
 topics = model[doc]
